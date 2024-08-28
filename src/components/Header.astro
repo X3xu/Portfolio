@@ -1,0 +1,108 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<h1><span class="text-yellow-400 font-bold">Jesús Jiménez Dillana </span></h1>
+<h2>Desarrollador Software<h2/>
+
+<header id="header-nav">
+  <nav class="nav">
+    <ul>
+     <li><a href="#contact">Sobre mí</a></li>
+      <li><a href="#experiencie">Experiencia</a></li>
+      <li><a href="#education">Educación</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Proyectos</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style lang="scss">
+    nav {
+        margin: 40px;
+        text-wrap: nowrap; 
+        width: 100%;
+
+    &.fixed {
+      position: fixed;
+      top: 0;
+      padding: 10px 0; // Reduce el padding para una transición suave
+      width: 1000px;
+      z-index: 2;
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      border-radius: 20px;
+      padding: 0;
+
+      li {
+        padding: 16px 32px;
+        list-style: none;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      li:hover {
+        transition: all 0.75s ease-out;
+        text-decoration: underline;
+        text-decoration-color: rgb(53 92 125);
+      }
+
+      li a {
+        cursor: pointer;
+        font-size: 2rem;
+        color: rgb(53 92 125);
+        text-decoration: none;
+      }
+    }
+
+    a {
+      color: rgb(53 92 125);
+      text-decoration: none;
+    }
+  }
+
+  h1 {
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  @media only screen and (max-width: 600px) {
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .text-gradient {
+    color: rgb(250 204 21);
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  document.addEventListener("scroll", function () {
+    var navbar: any;
+    navbar = document.querySelector(".nav");
+    if (window.scrollY > 300) {
+      navbar.classList.add("fixed");
+    } else {
+      navbar.classList.remove("fixed");
+    }
+  });
+</script>

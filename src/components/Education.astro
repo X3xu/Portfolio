@@ -1,0 +1,77 @@
+---
+import EducationItem from "./EducationItem.astro";
+
+const EXPERIENCIE = [
+  {
+    date: "Actualidad",
+    title: "Ciberseguridad en la Industria 4.0 ",
+    company: "CISCO",
+  },
+  {
+    date: "2019 - 2021",
+    title: "Desarrollo de Aplicaciones Multiplataforma",
+    company: "IES Santísima Trinidad",
+  },
+  {
+    date: "2017 - 2019",
+    title: "Fullstack developer",
+    company: "NTT Data",
+  },
+];
+---
+
+<div class="flex flex-col">
+  <div class="flex">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+      ></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path
+        d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg
+    >
+
+    <h3>Educación</h3>
+  </div>
+
+  <ol id="education" class="relative mt-16">
+    {
+      EXPERIENCIE.map((experiencie) => (
+        <li class="">
+          <EducationItem {...experiencie} />
+        </li>
+      ))
+    }
+  </ol>
+</div>
+
+<style lang="scss">
+  #experiencie {
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 2rem;
+  }
+
+  h3 {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  svg {
+    margin-right: 20px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+</style>

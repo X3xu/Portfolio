@@ -1,0 +1,84 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCIE = [
+  {
+    date: "Actualidad",
+    title: "Front-End Developer",
+    company: "Thinkabit",
+    description:
+      "Desarrollos a medida, análisis de peticiones, trato directo con los clientes. Implantación de medidas de integración continua y despliegue además de testing. ",
+  },
+  {
+    date: " Diciembre 2021 - Jun 2022",
+    title: "Front-End Developer",
+    company: "Indra (Minsait)",
+    description:
+      "Desarrollo en migración para cliente de banca privada, en entornos de trabajo Linux, trato directo con el cliente. ",
+  },
+  {
+    date: " Mar 2021 - Diciembre 2021",
+    title: "Fullstack developer",
+    company: "NTT Data",
+    description:
+      "Desarrollos completos de Back to Front, desde Java (Spring) a Angular 11, además de testing con jUnit. ",
+  },
+];
+---
+
+<div class="flex flex-col">
+  <div class="flex">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z"
+      ></path><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2"></path><path
+        d="M12 12l0 .01"></path><path d="M3 13a20 20 0 0 0 18 0"></path></svg
+    >
+
+    <h3>Experiencia Laboral</h3>
+  </div>
+
+  <ol id="experiencie" class="relative mt-16">
+    {
+      EXPERIENCIE.map((experiencie) => (
+        <li class="">
+          <ExperienceItem {...experiencie} />
+        </li>
+      ))
+    }
+  </ol>
+</div>
+
+<style lang="scss">
+  #experiencie {
+    margin: 0 auto;
+    max-width: 950px;
+    padding: 2rem;
+  }
+
+  h3 {
+    position: relative;
+    font-size: 2rem;
+    font-weight: 600;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  svg {
+    margin-right: 20px;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+</style>

@@ -1,0 +1,225 @@
+---
+import GitHub from "../icons/Github.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import HTML from "../icons/HTML.astro";
+import icoAstro from "../icons/icoAstro.astro";
+import Java from "../icons/Java.astro";
+import Sass from "../icons/Sass.astro";
+import React from "../icons/React.astro";
+import Angular from "../icons/Angular.astro";
+import Docker from "../icons/Docker.astro";
+import PHP from "../icons/PHP.astro";
+
+const TAGS = {
+  JavaScript: {
+    name: "JavaScript",
+    class: "bg-black text-white",
+    icon: JavaScript,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  Github: {
+    name: "Github",
+    class: "bg-[#003159] text-white",
+    icon: GitHub,
+  },
+  HTML: {
+    name: "HTML5",
+    class: "bg-[#003159] text-white",
+    icon: HTML,
+  },
+  icoAstro: {
+    name: "Astro",
+    class: "bg-[#003159] text-white",
+    icon: icoAstro,
+  },
+  Sass: {
+    name: "Sass",
+    class: "bg-[#003159] text-white",
+    icon: Sass,
+  },
+  React: {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: React,
+  },
+  Java: {
+    name: "Java",
+    class: "bg-[#003159] text-white",
+    icon: Java,
+  },
+  Angular: {
+    name: "Angular",
+    class: "bg-[#003159] text-white",
+    icon: Angular,
+  },
+  Docker: {
+    name: "Docker",
+    class: "bg-[#003159] text-white",
+    icon: Docker,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#003159] text-white",
+    icon: PHP,
+  },
+};
+const SkillsAdvance = [
+  {
+    tags: [TAGS.JavaScript],
+  },
+  {
+    tags: [TAGS.Sass],
+  },
+  {
+    tags: [TAGS.HTML],
+  },
+  {
+    tags: [TAGS.Java],
+  },
+];
+
+const SkillsIntermedium = [
+  {
+    tags: [TAGS.TAILWIND],
+  },
+  {
+    tags: [TAGS.Github],
+  },
+  {
+    tags: [TAGS.PHP],
+  },
+  {
+    tags: [TAGS.Docker],
+  },
+  {
+    tags: [TAGS.icoAstro],
+  },
+];
+
+const SkillsBasic = [
+  {
+    tags: [TAGS.Angular],
+  },
+  {
+    tags: [TAGS.React],
+  },
+];
+---
+<div id="skills" class="flex items-center justify-center titleSkills">
+  <div class="titleSkill">
+    <svg xmlns="http://www.w3.org/2000/svg"  width="50px"  height="50px"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code white"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
+    <h3>Skills</h3>
+  </div>
+</div>
+<div class="flex items-center gap-y-10 justify-center flex-col">
+  <h4 class="text-2xl font-semibold text-yellow-400">Avanzado</h4>
+  <div class="flex flex-row">
+    {
+      SkillsAdvance.map(({tags }) => (
+        <article class="flex flex-row space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={
+                        "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
+                      }
+                    >
+                      <tag.icon class="size-12" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+  <h4 class="text-2xl font-semibold text-yellow-400">Intermedio</h4>
+  <div class="flex flex-row">
+    {
+      SkillsIntermedium.map(({tags }) => (
+        <article class="flex flex-row space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={
+                        "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
+                      }
+                    >
+                      <tag.icon class="size-12" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+  <h4 class="text-2xl font-semibold text-yellow-400">Básico</h4>
+  <div class="flex flex-row">
+    {
+      SkillsBasic.map(({tags }) => (
+        <article class="flex flex-row space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={
+                        "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
+                      }
+                    >
+                      <tag.icon class="size-12" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</div>
+
+
+<style lang="scss">
+
+  .titleSkill {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  
+  .titleSkills {
+    svg {
+      height: 30px;
+      position: absolute;
+      bottom: 10px;
+      left: -40px;
+      width: 30px;
+    }
+  
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+     }
+  }
+</style>
