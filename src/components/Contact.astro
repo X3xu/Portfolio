@@ -17,7 +17,7 @@
       <h3>Sobre mí</h3>
     </div>
 
-  <div class="flex gap-16 mt-10">
+  <div class="flex gap-16 mt-10 abaoutme">
     <article>
       <p>
         ¡Hola! Soy Jesús, llevo 3 años dedicándome al desarrollo software a
@@ -97,7 +97,7 @@
   section {
     padding: 40px;
   }
-  
+
   svg {
     margin-right: 20px;
   }
@@ -112,5 +112,11 @@
     font-weight: 600;
     margin: 10px 0;
     text-align: center;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .abaoutme {
+        flex-direction: column;
+    }
   }
 </style>

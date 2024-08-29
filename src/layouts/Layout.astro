@@ -20,7 +20,8 @@ const { title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -28,18 +29,10 @@ const { title } = Astro.props;
   <body>
     <Header />
     <Contact />
-    <section>
-      <Experiencie />
-    </section>
-    <section>
-      <Skills />
-    </section>
-    <section>
-      <Projects />
-    </section>
-    <section>
-      <Education />
-    </section>
+    <Experiencie />
+    <Skills />
+    <Projects />
+    <Education />
     <Card />
     <Footer />
   </body>
@@ -47,7 +40,7 @@ const { title } = Astro.props;
 
 <style is:global lang="scss">
   section {
-    margin: 50px 0;
+    margin: 35px 0;
   }
 
   $yellow: rgb(250 204 21);
@@ -73,7 +66,6 @@ const { title } = Astro.props;
       rgb(0, 0, 0) -10.7%,
       rgb(53, 92, 125) 88.8%
     );
-
     scroll-behavior: smooth;
   }
 
@@ -125,6 +117,12 @@ const { title } = Astro.props;
 </style>
 
 <style>
+  @media only screen and (max-width: 1100px) {
+    body {
+      width: 100%;
+    }
+  }
+
   body {
     margin: 0 auto;
     max-width: 1000px;

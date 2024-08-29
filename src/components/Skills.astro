@@ -110,104 +110,132 @@ const SkillsBasic = [
   },
 ];
 ---
-<div id="skills" class="flex items-center justify-center titleSkills">
-  <div class="titleSkill">
-    <svg xmlns="http://www.w3.org/2000/svg"  width="50px"  height="50px"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code white"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
-    <h3>Skills</h3>
-  </div>
-</div>
-<div class="flex items-center gap-y-10 justify-center flex-col">
-  <h4 class="text-2xl font-semibold text-yellow-400">Avanzado</h4>
-  <div class="flex flex-row">
-    {
-      SkillsAdvance.map(({tags }) => (
-        <article class="flex flex-row space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-          <div class="w-full md:w-1/2 md:max-w-lg">
-            <div class="flex flex-wrap mt-2">
-              <ul class="flex flex-row mb-2 gap-x-2">
-                {tags.map((tag) => (
-                  <li>
-                    <span
-                      class={
-                        "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
-                      }
-                    >
-                      <tag.icon class="size-12" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </article>
-      ))
-    }
-  </div>
-  <h4 class="text-2xl font-semibold text-yellow-400">Intermedio</h4>
-  <div class="flex flex-row">
-    {
-      SkillsIntermedium.map(({tags }) => (
-        <article class="flex flex-row space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-          <div class="w-full md:w-1/2 md:max-w-lg">
-            <div class="flex flex-wrap mt-2">
-              <ul class="flex flex-row mb-2 gap-x-2">
-                {tags.map((tag) => (
-                  <li>
-                    <span
-                      class={
-                        "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
-                      }
-                    >
-                      <tag.icon class="size-12" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </article>
-      ))
-    }
-  </div>
-  <h4 class="text-2xl font-semibold text-yellow-400">Básico</h4>
-  <div class="flex flex-row">
-    {
-      SkillsBasic.map(({tags }) => (
-        <article class="flex flex-row space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-          <div class="w-full md:w-1/2 md:max-w-lg">
-            <div class="flex flex-wrap mt-2">
-              <ul class="flex flex-row mb-2 gap-x-2">
-                {tags.map((tag) => (
-                  <li>
-                    <span
-                      class={
-                        "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
-                      }
-                    >
-                      <tag.icon class="size-12" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </article>
-      ))
-    }
-  </div>
-</div>
 
+<section>
+  <div id="skills" class="flex items-center justify-center titleSkills">
+    <div class="titleSkill">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="50px"
+        height="50px"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="icon icon-tabler icons-tabler-outline icon-tabler-code white"
+        ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+          d="M7 8l-4 4l4 4"></path><path d="M17 8l4 4l-4 4"></path><path
+          d="M14 4l-4 16"></path></svg
+      >
+      <h3>Skills</h3>
+    </div>
+  </div>
+  <div class="flex items-center gap-y-10 justify-center flex-col">
+    <h4 class="text-2xl font-semibold text-yellow-400">Avanzado</h4>
+    <div class="flex flex-row skillsResponsive">
+      {
+        SkillsAdvance.map(({ tags }) => (
+          <article class="flex flex-row space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2 md:max-w-lg">
+              <div class="flex flex-wrap mt-2">
+                <ul class="flex flex-row mb-2 gap-x-2">
+                  {tags.map((tag) => (
+                    <li>
+                      <span
+                        class={
+                          "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
+                        }
+                      >
+                        <tag.icon class="size-12" />
+                        {tag.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <h4 class="text-2xl font-semibold text-yellow-400">Intermedio</h4>
+    <div class="flex flex-row skillsResponsive">
+      {
+        SkillsIntermedium.map(({ tags }) => (
+          <article class="flex flex-row space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2 md:max-w-lg">
+              <div class="flex flex-wrap mt-2">
+                <ul class="flex flex-row mb-2 gap-x-2">
+                  {tags.map((tag) => (
+                    <li>
+                      <span
+                        class={
+                          "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
+                        }
+                      >
+                        <tag.icon class="size-12" />
+                        {tag.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+    <h4 class="text-2xl font-semibold text-yellow-400">Básico</h4>
+    <div class="flex flex-row skillsResponsive">
+      {
+        SkillsBasic.map(({ tags }) => (
+          <article class="flex flex-row space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+            <div class="w-full md:w-1/2 md:max-w-lg">
+              <div class="flex flex-wrap mt-2">
+                <ul class="flex flex-row mb-2 gap-x-2">
+                  {tags.map((tag) => (
+                    <li>
+                      <span
+                        class={
+                          "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
+                        }
+                      >
+                        <tag.icon class="size-12" />
+                        {tag.name}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>
 
 <style lang="scss">
+  @media (max-width: 1100px) {
+    section {
+      padding: 0 30px;
+    }
+
+    .skillsResponsive {
+      flex-direction: column;
+    }
+  }
+
+
 
   .titleSkill {
     position: relative;
+    flex-wrap: wrap;
     margin-bottom: 40px;
   }
-  
+
   .titleSkills {
     svg {
       height: 30px;
@@ -216,10 +244,10 @@ const SkillsBasic = [
       left: -40px;
       width: 30px;
     }
-  
+
     h3 {
       font-size: 2rem;
       font-weight: 600;
-     }
+    }
   }
 </style>

@@ -38,17 +38,17 @@ const PROJECTS = [
       "Juego que consiste en preguntas aleatorías que cuestionarán tu nivel de cultura, ¿serás capaz de acertar todas?",
     link: "https://github.com/X3xu/quizzGame",
     github: "https://quizzzgame.vercel.app/",
-    image: "/projects/svgl.webp",
+    image: "src/assets/QuizzGame.webp",
     tags: [TAGS.REACT, TAGS.SASS],
   },
   {
     title: "Portfolio JJD | Jesús Jiménez Dillana",
     description:
-      "Descubre como está desarrollado este mismo portfolio con las diferentes tecnoligías",
-    link: "https://adventjs.dev",
-    github: "https://quizzzgame.vercel.app/",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.Astro, TAGS.TAILWIND, ],
+      "Descubre como está desarrollado este mismo portfolio con las diferentes tecnologías.",
+    link: "https://quizzzgame.vercel.app/",
+    github: "https://github.com/X3xu/Portfolio",
+    image: "src/assets/Portfolio.webp",
+    tags: [TAGS.Astro, TAGS.TAILWIND],
   },
 ];
 ---
@@ -66,7 +66,7 @@ const PROJECTS = [
           <div class="w-full md:w-1/2">
             <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
               <img
-                alt="Recién llegado vs 5 años en Nueva Zelanda"
+                alt="Proyectos"
                 class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
                 loading="lazy"
                 src={image}
@@ -78,7 +78,7 @@ const PROJECTS = [
             <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
               {title}
             </h3>
-            <div class="flex flex-wrap mt-2">
+            <div class="flex flex-wrap mt-2 justify-center">
               <ul class="flex flex-row mb-2 gap-x-2">
                 {tags.map((tag) => (
                   <li>
@@ -127,6 +127,11 @@ const PROJECTS = [
   svg {
     margin-right: 20px;
   }
+
+  section {
+    padding: 30px;
+  }
+
 
 
 </style>
