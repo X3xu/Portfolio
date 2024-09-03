@@ -8,7 +8,7 @@ import vercel from '@astrojs/vercel/serverless';
 export default defineConfig({
   output: 'server',
   adapter: vercel({
-    includeFiles: ['./src/assets/CVJesúsJiménezDillana.pdf', './src/assets/*.webp'],
+    includeFiles: ['./src/assets/*.webp'],
   }),
 
   devToolbar: {
