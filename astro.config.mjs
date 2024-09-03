@@ -5,11 +5,6 @@ import react from '@astrojs/react';
 import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
-  output: 'server',
-  adapter: vercel({
-    includeFiles: ['./*.webp'],
-  }),
-
   devToolbar: {
     enabled: false
   },
