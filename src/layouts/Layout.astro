@@ -44,12 +44,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
 
-    const target = e.currentTarget;
+    const target = e.currentTarget as HTMLAnchorElement | null; // Explicitamos el tipo
 
-    // Verificamos si el target no es null y si es un HTMLAnchorElement
-    if (target && target instanceof HTMLAnchorElement) {
-      const targetId = target.getAttribute('href').substring(1);
-      const targetElement = document.getElementById(targetId);
+    if (target !== null) { // Verificación explícita de null
+      const targetId = target.getAttribute('href')?.substring(1); // Uso seguro con optional chaining
+      const targetElement = targetId ? document.getElementById(targetId) : null;
 
       if (targetElement) {
         const offsetPosition = targetElement.getBoundingClientRect().top + window.scrollY - 350;
@@ -62,7 +61,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-
 
 </script>
 
