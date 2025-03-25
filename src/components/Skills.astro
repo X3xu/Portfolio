@@ -10,6 +10,8 @@ import React from "../icons/React.astro";
 import Angular from "../icons/Angular.astro";
 import Docker from "../icons/Docker.astro";
 import PHP from "../icons/PHP.astro";
+import Vue from "../icons/Vue.astro";
+import Webpack from "../icons/Webpack.astro";
 
 const TAGS = {
   JavaScript: {
@@ -67,6 +69,16 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: PHP,
   },
+  Vue: {
+    name: "Vue",
+    class: "bg-[#003159] text-white",
+    icon: Vue,
+  },
+  Webpack: {
+    name: "Webpack",
+    class: "bg-[#003159] text-white",
+    icon: Webpack,
+  },
 };
 const SkillsAdvance = [
   {
@@ -108,6 +120,12 @@ const SkillsBasic = [
   {
     tags: [TAGS.React],
   },
+  {
+    tags: [TAGS.Vue],
+  },
+  {
+    tags: [TAGS.Webpack],
+  },
 ];
 ---
 
@@ -133,7 +151,6 @@ const SkillsBasic = [
     </div>
   </div>
   <div class="flex items-center gap-y-10 justify-center flex-col">
-    <h4 class="text-2xl font-semibold text-yellow-400">Avanzado</h4>
     <div class="flex flex-row skillsResponsive">
       {
         SkillsAdvance.map(({ tags }) => (
@@ -142,7 +159,7 @@ const SkillsBasic = [
               <div class="flex flex-wrap mt-2">
                 <ul class="flex flex-row mb-2 gap-x-2">
                   {tags.map((tag) => (
-                    <li>
+                    <li class="mr-4">
                       <span
                         class={
                           "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
@@ -160,7 +177,6 @@ const SkillsBasic = [
         ))
       }
     </div>
-    <h4 class="text-2xl font-semibold text-yellow-400">Intermedio</h4>
     <div class="flex flex-row skillsResponsive">
       {
         SkillsIntermedium.map(({ tags }) => (
@@ -169,7 +185,7 @@ const SkillsBasic = [
               <div class="flex flex-wrap mt-2">
                 <ul class="flex flex-row mb-2 gap-x-2">
                   {tags.map((tag) => (
-                    <li>
+                    <li class="mr-4">
                       <span
                         class={
                           "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
@@ -187,7 +203,6 @@ const SkillsBasic = [
         ))
       }
     </div>
-    <h4 class="text-2xl font-semibold text-yellow-400">Básico</h4>
     <div class="flex flex-row skillsResponsive">
       {
         SkillsBasic.map(({ tags }) => (
@@ -196,7 +211,7 @@ const SkillsBasic = [
               <div class="flex flex-wrap mt-2">
                 <ul class="flex flex-row mb-2 gap-x-2">
                   {tags.map((tag) => (
-                    <li>
+                    <li class="mr-4">
                       <span
                         class={
                           "flex gap-x-2 rounded-full text-2xl ${tag.class} py-1 px-2 items-center flex "
@@ -250,4 +265,23 @@ const SkillsBasic = [
       font-weight: 600;
     }
   }
+
+  ul {
+    gap: 16px;
+
+    li {
+      cursor: pointer;
+    }
+  }
+
+  li span {
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px; 
+    }
+
+  li span:hover {
+    box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7); 
+    transform: scale(1.05);
+  }
+
 </style>
