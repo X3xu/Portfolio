@@ -6,6 +6,7 @@ import Link from "./Link.astro";
 import LinkButton from "./LinkButton.astro";
 import Sass from "../icons/Sass.astro";
 import icoAstro from "../icons/icoAstro.astro";
+import icoScript from "../icons/JavaScript.astro";
 
 const TAGS = {
   REACT: {
@@ -30,6 +31,12 @@ const TAGS = {
     class: "bg-black  text-white",
     icon: icoAstro,
   },
+  
+  JavaScript: {
+    name: "JavaScript",
+    class: "bg-black  text-white",
+    icon: icoScript,
+  },
 };
 const PROJECTS = [
   {
@@ -40,6 +47,15 @@ const PROJECTS = [
     github: "https://github.com/X3xu/quizzGame",
     image: "QuizzGame.webp",
     tags: [TAGS.REACT, TAGS.SASS],
+  },
+    {
+    title: "Star Wars",
+    description:
+      "Una web SPA para explorar la API de Star Wars",
+    link: "https://star-wars-seven-iota.vercel.app/",
+    github: "https://github.com/X3xu/star-wars",
+    image: "SWAPI.webp",
+    tags: [TAGS.JavaScript],
   },
   {
     title: "Portfolio JJD | Jesús Jiménez Dillana",
@@ -67,7 +83,7 @@ const PROJECTS = [
             <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
               <img
                 alt="Proyectos"
-                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105 max-h-[250px] overflow-auto"
                 src={image}
               />
             </div>
