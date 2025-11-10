@@ -7,6 +7,8 @@ import LinkButton from "./LinkButton.astro";
 import Sass from "../icons/Sass.astro";
 import icoAstro from "../icons/icoAstro.astro";
 import icoScript from "../icons/JavaScript.astro";
+import HTML from "../icons/HTML.astro";
+import CSS from "../icons/CSS.astro";
 
 const TAGS = {
   REACT: {
@@ -37,8 +39,27 @@ const TAGS = {
     class: "bg-black  text-white",
     icon: icoScript,
   },
+  HTML: {
+    name: "HTML",
+    class: "bg-black text-white",
+    icon: HTML,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-black text-white",
+    icon: CSS,
+  },
 };
 const PROJECTS = [
+    {
+    title: "UI Template",
+    description:
+      "Plantilla web responsive desarrollada como prueba técnica utilizando HTML, CSS y JavaScript vanilla. Implementa un diseño moderno y funcional con interacciones dinámicas.",
+    link: "https://waveless-blond.vercel.app/",
+    github: "https://github.com/X3xu/Avoris",
+    image: "waveless.webp",
+    tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS],
+  },
   {
     title: "QuizzGame - ¡Diviértete con entretenidas preguntas!",
     description:
