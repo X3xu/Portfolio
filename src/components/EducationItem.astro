@@ -1,61 +1,52 @@
 ---
-import LinkInline from "./LinkInline.astro"
-
 interface Props {
-  title: string
-  company: string
-  link?: string
-  date: string
+  title: string;
+  company: string;
+  link?: string;
+  date: string;
 }
 
-const { title, company, link, date } = Astro.props
+const { title, company, date } = Astro.props;
 ---
 
-<div
-  class="relative mx-12 pb-12 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
->
-  <div class="relative pb-12 md:col-span-2">
-    <div class="sticky top-0">
-      <span class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl"
-        >&bull;</span
-      >
-
-      <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
-      <h4 class="font-semibold text-xl">{company}</h4>
-      <time class="p-0 m-0 text-sm">{date}</time>
-    </div>
+<li class="edu-item card">
+  <div class="edu-left">
+    <h3 class="edu-title">{title}</h3>
+    <p class="edu-company">{company}</p>
   </div>
-  <div class="relative flex flex-col items-center justify-center gap-2 pb-4 md:col-span-3">
-    {
-      link && (
-        <LinkInline href={link}>
-          Saber más{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </>
-          </svg>
-        </LinkInline>
-      )
-    }
-  </div>
-</div>
+  <time class="edu-date">{date}</time>
+</li>
 
+<style lang="scss">
+  .edu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 22px;
+    flex-wrap: wrap;
+    transition: border-color .2s, transform .2s;
+    &:hover { transform: translateX(4px); }
+  }
 
-<style>
-  svg {
-    margin-right: 10px;
+  .edu-title {
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.4;
+  }
+
+  .edu-company {
+    font-size: .82rem;
+    color: var(--accent);
+    margin-top: 3px;
+  }
+
+  .edu-date {
+    font-family: var(--font-mono);
+    font-size: .72rem;
+    color: var(--muted);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 </style>

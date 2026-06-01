@@ -1,0 +1,140 @@
+---
+import "../../styles/ux-options.css";
+
+const availableDesigns = ["minimal", "glass", "editorial"] as const;
+type Design = (typeof availableDesigns)[number];
+
+export function getStaticPaths() {
+  return ["minimal", "glass", "editorial"].map((design) => ({
+    params: { design },
+  }));
+}
+
+const routeDesign = Astro.params.design?.toLowerCase();
+const selectedDesign: Design = availableDesigns.includes(routeDesign as Design)
+  ? (routeDesign as Design)
+  : "minimal";
+
+const designMeta: Record<
+  Design,
+  { title: string; subtitle: string; badge: string; highlight: string }
+> = {
+  minimal: {
+    title: "Minimal Pro",
+    subtitle: "Limpio, sobrio y orientado a lectura rápida.",
+    badge: "Ideal para reclutadores y clientes B2B",
+    highlight: "Jerarquía visual clara + foco en proyectos destacados.",
+  },
+  glass: {
+    title: "Glass Modern",
+    subtitle: "Visual premium con tarjetas translúcidas y profundidad.",
+    badge: "Ideal para perfil frontend moderno",
+    highlight: "Impacto visual sin perder claridad en la navegación.",
+  },
+  editorial: {
+    title: "Editorial Contrast",
+    subtitle: "Tipografía protagonista y contraste fuerte.",
+    badge: "Ideal para marca personal con carácter",
+    highlight: "Narrativa más potente sobre experiencia y propuesta de valor.",
+  },
+};
+
+const current = designMeta[selectedDesign];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Opciones UX Portfolio | {current.title}</title>
+    <meta
+      name="description"
+      content="Comparador de propuestas UX limpias para elegir el rediseño del portfolio."
+    />
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body class={`preview-body design-${selectedDesign}`}>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="topbar">
+      <p class="topbar-label">Comparador UX limpio · {current.subtitle}</p>
+      <nav aria-label="Selector de diseño">
+        <ul class="design-nav">
+          {availableDesigns.map((design) => (
+            <li>
+              <a
+                href={`/ux-opciones/${design}`}
+                class:list={["design-link", selectedDesign === design && "active"]}
+                aria-current={selectedDesign === design ? "page" : undefined}
+              >
+                {designMeta[design].title}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+
+    <main id="contenido" class="preview-shell">
+      <section class="panel hero">
+        <p class="eyebrow">{current.badge}</p>
+        <h1>Jesús Jiménez Dillana · Frontend Developer</h1>
+        <p class="lead">
+          Portfolio profesional enfocado en producto digital, experiencia de usuario
+          y frontend de alto rendimiento.
+        </p>
+        <p class="highlight">{current.highlight}</p>
+        <div class="hero-actions">
+          <a href="#proyectos" class="button button-primary">Ver proyectos</a>
+          <a href="#contacto" class="button button-secondary">Contactar</a>
+        </div>
+      </section>
+
+      <section id="sobre-mi" class="panel">
+        <h2>Sobre mí</h2>
+        <p>
+          Desarrollo interfaces mantenibles, accesibles y escalables. Colaboro con
+          negocio y diseño para convertir objetivos en experiencias digitales claras.
+        </p>
+      </section>
+
+      <section id="proyectos" class="panel">
+        <h2>Proyectos destacados</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <img src="/waveless.webp" alt="Captura del proyecto UI Template" loading="lazy" />
+            <div class="project-content">
+              <h3>UI Template</h3>
+              <p>Landing responsive con enfoque en performance y consistencia visual.</p>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="/QuizzGame.webp" alt="Captura del proyecto QuizzGame" loading="lazy" />
+            <div class="project-content">
+              <h3>QuizzGame</h3>
+              <p>Aplicación React con flujo UX orientado a engagement y feedback inmediato.</p>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="/SWAPI.webp" alt="Captura del proyecto Star Wars" loading="lazy" />
+            <div class="project-content">
+              <h3>Star Wars App</h3>
+              <p>SPA con exploración de datos y experiencia de navegación contextual.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contacto" class="panel contact-panel">
+        <h2>Contacto</h2>
+        <p>
+          Si este estilo encaja con tu marca personal, lo aplico al portfolio completo
+          con mejores prácticas frontend.
+        </p>
+        <a class="button button-primary" href="mailto:jesusjimenezfp@gmail.com">
+          jesusjimenezfp@gmail.com
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

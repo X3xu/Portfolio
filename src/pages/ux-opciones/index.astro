@@ -1,0 +1,61 @@
+---
+const designs = [
+  { id: "minimal", title: "Minimal Pro" },
+  { id: "glass", title: "Glass Modern" },
+  { id: "editorial", title: "Editorial Contrast" },
+];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Opciones UX Portfolio</title>
+    <style>
+      body {
+        font-family: "Segoe UI", system-ui, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #0f172a;
+        color: #f8fafc;
+      }
+      .box {
+        width: min(720px, 92vw);
+        border: 1px solid #334155;
+        border-radius: 16px;
+        padding: 1.4rem;
+        background: #111827;
+      }
+      h1 {
+        margin-top: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 0.6rem;
+      }
+      a {
+        color: #7dd3fc;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="box">
+      <h1>Opciones UX disponibles</h1>
+      <ul>
+        {
+          designs.map((design) => (
+            <li>
+              <a href={`/ux-opciones/${design.id}`}>{design.title}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </main>
+  </body>
+</html>

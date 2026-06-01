@@ -1,0 +1,98 @@
+
+> portfolio@0.0.1 npx
+> astro dev --port 4321
+
+23:05:42 [types] Generated 1ms
+
+ astro  v4.12.2 ready in 635 ms
+
+┃ Local    http://localhost:4321/
+┃ Network  use --host to expose
+
+23:05:42 watching for file changes...
+23:09:14 [200] / 10ms
+23:13:29 [watch] src/layouts/Layout.astro
+23:13:59 [watch] src/components/Header.astro
+23:14:41 [watch] src/components/Contact.astro
+23:14:52 [watch] src/components/Experiencie.astro
+23:15:05 [watch] src/components/ExperienceItem.astro
+23:15:18 [watch] src/components/Skills.astro
+23:15:51 [watch] src/components/Projects.astro
+23:16:06 [watch] src/components/Education.astro
+23:16:13 [watch] src/components/EducationItem.astro
+23:16:21 [watch] src/components/Card.astro
+23:16:33 [watch] src/components/Footer.astro
+23:17:00 [watch] src/layouts/Layout.astro
+23:20:08 [watch] src/components/Header.astro
+23:20:13 [watch] src/components/Header.astro
+23:21:03 [watch] src/components/Contact.astro
+23:21:23 [watch] src/components/Experiencie.astro
+23:21:39 [watch] src/components/ExperienceItem.astro
+23:22:00 [watch] src/components/Skills.astro
+23:22:08 [watch] src/components/Education.astro
+23:22:57 [watch] src/layouts/Layout.astro
+23:23:00 [watch] src/layouts/Layout.astro
+23:24:52 [watch] src/components/Contact.astro
+23:25:05 [watch] src/layouts/Layout.astro
+23:25:11 [watch] src/layouts/Layout.astro
+23:25:18 [watch] src/layouts/Layout.astro
+23:25:28 [watch] src/layouts/Layout.astro
+23:25:55 [watch] src/layouts/Layout.astro
+23:26:01 [watch] src/components/Header.astro
+23:26:06 [watch] src/components/Header.astro
+23:26:13 [watch] src/components/Header.astro
+23:26:21 [watch] src/components/Header.astro
+23:26:27 [watch] src/components/Header.astro
+23:26:35 [watch] src/components/ExperienceItem.astro
+23:26:40 [watch] src/components/Experiencie.astro
+23:26:44 [watch] src/components/Projects.astro
+23:26:49 [watch] src/components/Projects.astro
+23:26:58 [watch] src/components/Card.astro
+23:27:02 [watch] src/components/Footer.astro
+23:28:16 [watch] src/layouts/Layout.astro
+23:28:52 [watch] src/layouts/Layout.astro
+23:29:05 [watch] src/layouts/Layout.astro
+23:29:21 [watch] src/components/Card.astro
+23:30:28 [watch] src/layouts/Layout.astro
+23:30:35 [watch] src/components/Header.astro
+23:32:02 [watch] src/layouts/Layout.astro
+23:32:09 [watch] src/layouts/Layout.astro
+23:32:18 [watch] src/layouts/Layout.astro
+23:32:22 [watch] src/layouts/Layout.astro
+23:32:25 [watch] src/layouts/Layout.astro
+23:32:30 [watch] src/components/Header.astro
+23:32:33 [watch] src/components/Header.astro
+23:33:05 [watch] src/layouts/Layout.astro
+23:33:11 [watch] src/layouts/Layout.astro
+23:33:16 [watch] src/layouts/Layout.astro
+23:33:20 [watch] src/layouts/Layout.astro
+23:33:24 [watch] src/layouts/Layout.astro
+23:33:27 [watch] src/layouts/Layout.astro
+23:33:31 [watch] src/layouts/Layout.astro
+23:33:35 [watch] src/components/Header.astro
+23:33:39 [watch] src/components/Header.astro
+23:34:19 [watch] src/layouts/Layout.astro
+23:34:22 [watch] src/components/Header.astro
+23:42:49 [watch] src/layouts/Layout.astro
+23:43:09 [watch] src/layouts/Layout.astro
+23:43:18 [watch] src/layouts/Layout.astro
+23:43:28 [watch] src/layouts/Layout.astro
+23:43:32 [watch] src/layouts/Layout.astro
+23:43:37 [watch] src/layouts/Layout.astro
+23:43:41 [watch] src/layouts/Layout.astro
+23:43:52 [watch] src/components/Header.astro
+23:44:02 [watch] src/components/Header.astro
+23:44:08 [watch] src/components/Header.astro
+23:44:11 [watch] src/components/Header.astro
+23:44:19 [watch] src/components/Header.astro
+23:44:25 [watch] src/components/Header.astro
+23:44:31 [watch] src/components/ExperienceItem.astro
+23:44:35 [watch] src/components/Projects.astro
+23:44:40 [watch] src/layouts/Layout.astro
+23:45:39 [watch] src/layouts/Layout.astro
+23:45:44 [watch] src/components/Header.astro
+23:45:48 [watch] src/layouts/Layout.astro
+23:45:52 [watch] src/components/Projects.astro
+23:51:56 [watch] src/components/Projects.astro
+23:54:45 [watch] src/layouts/Layout.astro
+00:13:51 [watch] src/layouts/Layout.astro

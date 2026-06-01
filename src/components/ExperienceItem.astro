@@ -1,63 +1,148 @@
 ---
-import LinkInline from "./LinkInline.astro"
-
 interface Props {
-  title: string
-  company: string
-  description: string
-  link?: string
-  date: string
+  title: string;
+  company: string;
+  location?: string;
+  description: string;
+  link?: string;
+  date: string;
+  index?: number;
+  stack?: string[];
 }
 
-const { title, company, description, link, date } = Astro.props
+const { title, company, location, description, link, date, stack } = Astro.props;
 ---
 
-<div
-  class="relative mx-12 pb-12 grid before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 dark:before:border-white/15 before:content-[''] md:grid-cols-5 md:gap-10 md:space-x-4]"
->
-  <div class="relative pb-12 md:col-span-2">
-    <div class="sticky top-0">
-      <span class="text-yellow-400 -left-[42px] absolute rounded-full text-5xl"
-        >&bull;</span
-      >
+<li class="exp-item sr">
+  <span class="exp-dot" aria-hidden="true"></span>
 
-      <h3 class="text-xl font-bold text-yellow-400">{title}</h3>
-      <h4 class="font-semibold text-xl">{company}</h4>
-      <time class="p-0 m-0 text-sm">{date}</time>
+  <div class="exp-body card">
+    <div class="exp-header">
+      <div class="exp-meta">
+        <h3 class="exp-title">{title}</h3>
+        <p class="exp-company">
+          {company}
+          {location && <span class="exp-location">· {location}</span>}
+        </p>
+      </div>
+      <time class="exp-date">{date}</time>
     </div>
+
+    <p class="exp-desc">{description}</p>
+
+    {stack && stack.length > 0 && (
+      <ul class="exp-stack">
+        {stack.map(s => <li class="tag">{s}</li>)}
+      </ul>
+    )}
+
+    {link && (
+      <a class="exp-link" href={link} target="_blank" rel="noopener">
+        Saber más
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M7 17L17 7M17 7H7M17 7v10"/>
+        </svg>
+      </a>
+    )}
   </div>
-  <div class="relative flex flex-col gap-2 pb-4 md:col-span-3">
-    {description}
-    {
-      link && (
-        <LinkInline href={link}>
-          Saber más{" "}
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-5 icon icon-tabler icon-tabler-chevron-right"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <>
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path d="M9 6l6 6l-6 6" />
-            </>
-          </svg>
-        </LinkInline>
-      )
+</li>
+
+<style lang="scss">
+  .exp-item {
+    position: relative;
+    padding: 0 0 20px 48px;
+    &:last-child { padding-bottom: 0; }
+  }
+
+  .exp-dot {
+    position: absolute;
+    left: 8px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--accent);
+    background: var(--bg);
+    box-shadow: 0 0 0 4px var(--accent-dim);
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 0 4px var(--accent-dim); }
+    50%       { box-shadow: 0 0 0 8px var(--accent-dim), 0 0 20px var(--accent-dim); }
+  }
+
+  .exp-body {
+    padding: 20px 22px;
+    transition: border-color .2s, transform .2s;
+    &:hover { transform: translateX(3px); }
+  }
+
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+
+  .exp-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .exp-company {
+    font-size: .82rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-top: 3px;
+  }
+
+  .exp-location {
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .exp-date {
+    font-family: var(--font-mono);
+    font-size: .7rem;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .exp-desc {
+    font-size: .875rem;
+    line-height: 1.72;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+
+  .exp-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+
+    .tag {
+      font-size: .68rem;
+      padding: 3px 9px;
     }
-  </div>
-</div>
+  }
 
-
-<style>
-  svg {
-    margin-right: 10px;
+  .exp-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    font-size: .78rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    transition: gap .2s;
+    &:hover { gap: 8px; }
   }
 </style>

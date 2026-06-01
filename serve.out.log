@@ -1,0 +1,44 @@
+
+> npx
+> serve C:\Users\Jesus\Desktop\Aplicaciones\Astro\Portfolio\dist -l 4188
+
+ UPDATE  The latest version of `serve` is 14.2.6
+ INFO  Accepting connections at http://localhost:4188
+ HTTP  1/6/2026 18:21:09 127.0.0.1 GET /ux-opciones/minimal/
+ HTTP  1/6/2026 18:21:09 127.0.0.1 Returned 200 in 11 ms
+ HTTP  1/6/2026 18:21:12 127.0.0.1 GET /ux-opciones/minimal/
+ HTTP  1/6/2026 18:21:12 127.0.0.1 Returned 200 in 3 ms
+ HTTP  1/6/2026 18:21:12 127.0.0.1 GET /_astro/index.CrlSUlkq.css
+ HTTP  1/6/2026 18:21:12 127.0.0.1 GET /_astro/_design_.Cu26Q2Mz.css
+ HTTP  1/6/2026 18:21:12 127.0.0.1 Returned 200 in 4 ms
+ HTTP  1/6/2026 18:21:12 127.0.0.1 Returned 200 in 5 ms
+ HTTP  1/6/2026 18:21:12 127.0.0.1 GET /waveless.webp
+ HTTP  1/6/2026 18:21:12 127.0.0.1 GET /QuizzGame.webp
+ HTTP  1/6/2026 18:21:12 127.0.0.1 GET /SWAPI.webp
+ HTTP  1/6/2026 18:21:12 127.0.0.1 Returned 200 in 3 ms
+ HTTP  1/6/2026 18:21:12 127.0.0.1 Returned 200 in 3 ms
+ HTTP  1/6/2026 18:21:12 127.0.0.1 Returned 200 in 8 ms
+ HTTP  1/6/2026 18:21:14 127.0.0.1 GET /ux-opciones/glass/
+ HTTP  1/6/2026 18:21:14 127.0.0.1 Returned 200 in 2 ms
+ HTTP  1/6/2026 18:21:14 127.0.0.1 GET /_astro/index.CrlSUlkq.css
+ HTTP  1/6/2026 18:21:14 127.0.0.1 Returned 200 in 2 ms
+ HTTP  1/6/2026 18:21:14 127.0.0.1 GET /_astro/_design_.Cu26Q2Mz.css
+ HTTP  1/6/2026 18:21:14 127.0.0.1 Returned 200 in 1 ms
+ HTTP  1/6/2026 18:21:14 127.0.0.1 GET /waveless.webp
+ HTTP  1/6/2026 18:21:14 127.0.0.1 Returned 200 in 1 ms
+ HTTP  1/6/2026 18:21:14 127.0.0.1 GET /QuizzGame.webp
+ HTTP  1/6/2026 18:21:14 127.0.0.1 GET /SWAPI.webp
+ HTTP  1/6/2026 18:21:14 127.0.0.1 Returned 200 in 1 ms
+ HTTP  1/6/2026 18:21:14 127.0.0.1 Returned 200 in 1 ms
+ HTTP  1/6/2026 18:21:16 127.0.0.1 GET /ux-opciones/editorial/
+ HTTP  1/6/2026 18:21:16 127.0.0.1 Returned 200 in 1 ms
+ HTTP  1/6/2026 18:21:16 127.0.0.1 GET /_astro/index.CrlSUlkq.css
+ HTTP  1/6/2026 18:21:16 127.0.0.1 Returned 200 in 1 ms
+ HTTP  1/6/2026 18:21:16 127.0.0.1 GET /_astro/_design_.Cu26Q2Mz.css
+ HTTP  1/6/2026 18:21:16 127.0.0.1 Returned 200 in 0 ms
+ HTTP  1/6/2026 18:21:16 127.0.0.1 GET /waveless.webp
+ HTTP  1/6/2026 18:21:16 127.0.0.1 Returned 200 in 1 ms
+ HTTP  1/6/2026 18:21:16 127.0.0.1 GET /QuizzGame.webp
+ HTTP  1/6/2026 18:21:16 127.0.0.1 GET /SWAPI.webp
+ HTTP  1/6/2026 18:21:16 127.0.0.1 Returned 200 in 1 ms
+ HTTP  1/6/2026 18:21:16 127.0.0.1 Returned 200 in 1 ms
