@@ -1,219 +1,283 @@
 ---
-import { PROJECTS } from '../data/resume'
+import GitHub from "../icons/Github.astro";
+import React from "../icons/React.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import Sass from "../icons/Sass.astro";
+import icoAstro from "../icons/icoAstro.astro";
+import icoScript from "../icons/JavaScript.astro";
+import HTML from "../icons/HTML.astro";
+import CSS from "../icons/CSS.astro";
+
+const TAGS = {
+  REACT:      { name: "React.js",     icon: React },
+  TAILWIND:   { name: "Tailwind CSS", icon: Tailwind },
+  SASS:       { name: "Sass",         icon: Sass },
+  ASTRO:      { name: "Astro",        icon: icoAstro },
+  JS:         { name: "JavaScript",   icon: icoScript },
+  HTML:       { name: "HTML",         icon: HTML },
+  CSS:        { name: "CSS",          icon: CSS },
+};
+
+const PROJECTS = [
+  {
+    num: "01",
+    title: "UI Template",
+    description:
+      "Plantilla web responsive desarrollada como prueba técnica. Implementa un diseño moderno con interacciones dinámicas usando HTML, CSS y JS vanilla.",
+    link: "https://waveless-blond.vercel.app/",
+    github: "https://github.com/X3xu/waveless.git",
+    image: "waveless.webp",
+    tags: [TAGS.JS, TAGS.HTML, TAGS.CSS],
+  },
+  {
+    num: "02",
+    title: "QuizzGame",
+    description:
+      "Juego de preguntas aleatorias que cuestionan tu nivel de cultura general. Desarrollado con React y Sass, con gestión de estado y animaciones de transición.",
+    link: "https://quizzzgame.vercel.app/",
+    github: "https://github.com/X3xu/quizzGame",
+    image: "QuizzGame.webp",
+    tags: [TAGS.REACT, TAGS.SASS],
+  },
+  {
+    num: "03",
+    title: "Star Wars Explorer",
+    description:
+      "SPA para explorar la API pública de Star Wars. Listados, detalle de personajes, naves y planetas con navegación fluida.",
+    link: "https://star-wars-seven-iota.vercel.app/",
+    github: "https://github.com/X3xu/star-wars",
+    image: "SWAPI.webp",
+    tags: [TAGS.JS],
+  },
+  {
+    num: "04",
+    title: "Portfolio — JJD",
+    description:
+      "Este mismo portfolio. Construido con Astro y Tailwind CSS, optimizado para Core Web Vitals y desplegado en Vercel.",
+    link: "https://jesusjimenezdillana.vercel.app/",
+    github: "https://github.com/X3xu/Portfolio",
+    image: "Portfolio.webp",
+    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+  },
+];
 ---
 
-<section id="projects" aria-labelledby="projects-heading" class="section">
-  <div class="container">
-    <p class="section-label" aria-hidden="true">// Work</p>
-    <h2 id="projects-heading" class="section-title">Proyectos</h2>
+<section id="projects" class="sr">
+  <p class="section-label">// proyectos</p>
+  <h2 class="section-title">Lo que he construido</h2>
 
-    <ul class="project-list" role="list">
-      {
-        PROJECTS.map((project, i) => (
-          <li class="project-item">
-            <article aria-labelledby={`project-title-${i}`}>
-              <div class="project-main">
-                <div class="project-text">
-                  <span class="project-num" aria-hidden="true">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  <h3 id={`project-title-${i}`} class="project-name">
-                    {project.title}
-                  </h3>
-                  <p class="project-desc">{project.description}</p>
-                  <ul class="project-tags" role="list" aria-label="Tecnologías usadas">
-                    {project.tags.map((tag) => (
-                      <li class="project-tag">{tag}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div class="project-image-wrap">
-                  <img
-                    src={project.image}
-                    alt={`Captura de pantalla de ${project.title}`}
-                    class="project-image"
-                    loading="lazy"
-                    decoding="async"
-                    width="400"
-                    height="225"
-                  />
-                </div>
-              </div>
-              <div class="project-links">
-                <a
-                  href={project.demo}
-                  class="project-link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Ver demo de ${project.title} (abre en nueva pestaña)`}
-                >
-                  Demo&nbsp;↗
+  <div class="projects-grid">
+    {PROJECTS.map(({ num, title, description, tags, link, github, image }) => (
+      <article class="project-item tilt card sr">
+        <div class="tilt-sh"></div>
+
+        <a class="project-image-link" href={link} target="_blank" rel="noopener" aria-label={`Ver demo de ${title}`}>
+          <div class="project-img-wrap">
+            <img
+              src={image}
+              alt={title}
+              class="project-img"
+              loading="lazy"
+            />
+            <div class="project-overlay">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
+              <span>Ver demo</span>
+            </div>
+          </div>
+        </a>
+
+        <div class="project-body">
+          <div class="project-top">
+            <span class="project-num">{num}</span>
+            <div class="project-actions">
+              {github && (
+                <a class="icon-btn" href={github} target="_blank" rel="noopener" aria-label="Código fuente">
+                  <GitHub />
                 </a>
-                <a
-                  href={project.repo}
-                  class="project-link project-link--ghost"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Ver código de ${project.title} en GitHub (abre en nueva pestaña)`}
-                >
-                  GitHub&nbsp;↗
+              )}
+              {link && (
+                <a class="icon-btn icon-btn--accent" href={link} target="_blank" rel="noopener" aria-label="Ver demo">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></svg>
                 </a>
-              </div>
-            </article>
-          </li>
-        ))
-      }
-    </ul>
+              )}
+            </div>
+          </div>
+
+          <h3 class="project-title">{title}</h3>
+          <p class="project-desc">{description}</p>
+
+          <ul class="project-tags">
+            {tags.map(tag => (
+              <li>
+                <span class="tag">
+                  <tag.icon class="tag-icon" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </article>
+    ))}
   </div>
 </section>
 
-<style>
-  .section {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-
-  .section-title {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    color: var(--ink);
-    margin-bottom: 3rem;
-  }
-
-  .container {
-    padding-top: clamp(3rem, 7vw, 5rem);
-    padding-bottom: clamp(3rem, 7vw, 5rem);
-  }
-
-  .project-list {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
+<style lang="scss">
+  .projects-grid {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 
   .project-item {
-    border-bottom: 1px solid var(--border);
-    padding: 2rem 0;
-  }
-  .project-item:first-child {
-    padding-top: 0;
-  }
-  .project-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform .18s ease-out, border-color .2s;
+
+    &:hover .project-img {
+      transform: scale(1.05);
+    }
+
+    &:hover .project-overlay {
+      opacity: 1;
+    }
   }
 
-  .project-main {
-    display: grid;
-    grid-template-columns: 1fr 22rem;
-    gap: 2.5rem;
-    align-items: start;
-    margin-bottom: 1.25rem;
+  /* ── Image block ── */
+  .project-image-link {
+    display: block;
+    text-decoration: none;
+  }
+
+  .project-img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 190px;
+  }
+
+  .project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform .5s var(--ease-out);
+    display: block;
+  }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(95, 20, 245, 0.82);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #fff;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity .28s;
+
+    svg { opacity: .9; }
+  }
+
+  /* ── Body ── */
+  .project-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .project-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .project-num {
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    color: var(--muted);
-    display: block;
-    margin-bottom: 0.5rem;
+    font-size: .65rem;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: .1em;
   }
 
-  .project-name {
-    font-size: 1.125rem;
+  .project-actions {
+    display: flex;
+    gap: 6px;
+  }
+
+  .icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .2s, border-color .2s, background .2s;
+
+    svg { width: 14px; height: 14px; }
+
+    &:hover {
+      color: var(--text);
+      border-color: var(--border-strong);
+      background: var(--surface);
+    }
+
+    &--accent {
+      border-color: rgba(95, 20, 245, .3);
+      color: var(--accent);
+
+      &:hover {
+        background: var(--accent-dim);
+        border-color: var(--accent-muted);
+        color: var(--accent);
+      }
+    }
+  }
+
+  .project-title {
+    font-size: 1rem;
     font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 0.5rem;
-    line-height: 1.3;
+    color: var(--text);
+    line-height: 1.25;
   }
 
   .project-desc {
-    font-size: 0.875rem;
-    color: var(--ink-2);
+    font-size: .83rem;
     line-height: 1.65;
-    margin-bottom: 0.875rem;
+    color: var(--muted);
+    flex: 1;
   }
 
   .project-tags {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.4rem;
-    list-style: none;
+    gap: 6px;
+    margin-top: auto;
   }
 
-  .project-tag {
-    font-size: 0.6875rem;
-    font-weight: 500;
-    color: var(--ink-2);
-    background: var(--bg-subtle);
-    border: 1px solid var(--border);
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
+  .tag-icon {
+    width: 13px;
+    height: 13px;
   }
 
-  .project-image-wrap {
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--border);
-    aspect-ratio: 16 / 9;
-    background: var(--bg-subtle);
-  }
-
-  .project-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
-  }
-  .project-item:hover .project-image {
-    transform: scale(1.03);
-  }
-
-  .project-links {
-    display: flex;
-    gap: 0.75rem;
-  }
-
-  .project-link {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    color: var(--ink);
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: var(--bg-card);
-    transition: border-color 0.15s, color 0.15s;
-  }
-  .project-link:hover {
-    border-color: var(--ink);
-  }
-
-  .project-link--ghost {
-    color: var(--muted);
-  }
-  .project-link--ghost:hover {
-    color: var(--ink);
-    border-color: var(--ink);
-  }
-
-  @media (max-width: 768px) {
-    .project-main {
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .projects-grid {
       grid-template-columns: 1fr;
-    }
-    .project-image-wrap {
-      order: -1;
     }
   }
 </style>

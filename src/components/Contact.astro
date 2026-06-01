@@ -1,127 +1,179 @@
 ---
-import { PERSONAL } from '../data/resume'
-
-const links = [
-  { label: 'Email', value: PERSONAL.email, href: `mailto:${PERSONAL.email}`, external: false },
-  { label: 'LinkedIn', value: 'linkedin.com/in/jesus-jimenez-dillana', href: PERSONAL.linkedin, external: true },
-  { label: 'GitHub', value: 'github.com/X3xu', href: PERSONAL.github, external: true },
-]
 ---
 
-<section id="contact" aria-labelledby="contact-heading" class="section">
-  <div class="container contact-inner">
-    <div class="contact-left">
-      <p class="section-label" aria-hidden="true">// Contacto</p>
-      <h2 id="contact-heading" class="section-title">
-        ¿Trabajamos<br />juntos?
-      </h2>
-      <p class="contact-copy">
-        Disponible para roles remotos · Front&#8209;End / FullStack · +44.000&nbsp;€/año.
+<section id="contact" class="sr">
+  <p class="section-label">// sobre mí</p>
+  <h2 class="section-title">Quién soy</h2>
+
+  <div class="about-grid">
+    <div class="about-bio">
+      <p>
+        Desarrollador <strong>Front-End Specialist y FullStack</strong> con más de 5 años de experiencia
+        especializado en la creación de arquitecturas web modernas, escalables y de alto rendimiento.
       </p>
+      <p>
+        Experto en el ecosistema <strong>React y Next.js</strong>, optimización de Core Web Vitals y
+        accesibilidad (WCAG). Orientado a la mejora continua de la experiencia de desarrollo (DX)
+        integrando Inteligencia Artificial mediante protocolos MCP.
+      </p>
+      <p>
+        Historial comprobado liderando transiciones tecnológicas complejas desde sistemas heredados
+        hacia arquitecturas modernas. Aplico principios <strong>SOLID, Clean Code y DRY</strong>,
+        alineando siempre las soluciones técnicas con los objetivos estratégicos del negocio.
+      </p>
+
+      <div class="about-badges">
+        <span class="about-badge">⚡ React 19 / Next.js</span>
+        <span class="about-badge">🎨 Sistemas de Diseño</span>
+        <span class="about-badge">🚀 Core Web Vitals</span>
+        <span class="about-badge">♿ WCAG</span>
+        <span class="about-badge">🤖 AI / MCPs</span>
+        <span class="about-badge">🔧 SOLID · Clean Code</span>
+      </div>
     </div>
 
-    <ul class="contact-links" role="list">
-      {
-        links.map(({ label, value, href, external }) => (
-          <li>
-            <a
-              href={href}
-              class="contact-entry"
-              {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              aria-label={`${label}: ${value}${external ? ' (abre en nueva pestaña)' : ''}`}
-            >
-              <span class="entry-label">{label}</span>
-              <span class="entry-value">{value}</span>
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <aside class="about-contact">
+      <h3 class="about-contact-title">Contacto directo</h3>
+
+      <a class="contact-row" href="mailto:jesusjimenezfp@gmail.com">
+        <span class="contact-icon">
+          <svg width="18" height="18" viewBox="0 49.4 512 399.42" fill="none">
+            <g fill-rule="nonzero">
+              <path fill="#4285f4" d="M34.91 448.818h81.454V251L0 163.727V413.91c0 19.287 15.622 34.91 34.91 34.91z"/>
+              <path fill="#34a853" d="M395.636 448.818h81.455c19.287 0 34.909-15.622 34.909-34.909V163.727L395.636 251z"/>
+              <path fill="#fbbc04" d="M395.636 99.727V251L512 163.727v-46.545c0-43.142-49.25-67.782-83.782-41.891z"/>
+            </g>
+            <path fill="#ea4335" d="M116.364 251V99.727L256 204.455 395.636 99.727V251L256 355.727z"/>
+            <path fill="#c5221f" fill-rule="nonzero" d="M0 117.182v46.545L116.364 251V99.727L83.782 75.291C49.25 49.4 0 74.04 0 117.18z"/>
+          </svg>
+        </span>
+        <span>jesusjimenezfp@gmail.com</span>
+        <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+
+      <a class="contact-row" href="https://www.linkedin.com/in/jesus-jimenez-dillana" target="_blank" rel="noopener">
+        <span class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="none">
+            <path d="M218.123 218.127h-37.931v-59.403c0-14.165-.253-32.4-19.728-32.4-19.756 0-22.779 15.434-22.779 31.369v60.43h-37.93V95.967h36.413v16.694h.51a39.907 39.907 0 0 1 35.928-19.733c38.445 0 45.533 25.288 45.533 58.186l-.016 67.013ZM56.955 79.27c-12.157.002-22.014-9.852-22.016-22.009-.002-12.157 9.851-22.014 22.008-22.016 12.157-.003 22.014 9.851 22.016 22.008A22.013 22.013 0 0 1 56.955 79.27m18.966 138.858H37.95V95.967h37.97v122.16ZM237.033.018H18.89C8.58-.098.125 8.161-.001 18.471v219.053c.122 10.315 8.576 18.582 18.89 18.474h218.144c10.336.128 18.823-8.139 18.966-18.474V18.454c-.147-10.33-8.635-18.588-18.966-18.453" fill="#0A66C2"/>
+          </svg>
+        </span>
+        <span>LinkedIn</span>
+        <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+
+      <a class="contact-row" href="https://github.com/X3xu" target="_blank" rel="noopener">
+        <span class="contact-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+          </svg>
+        </span>
+        <span>GitHub — X3xu</span>
+        <svg class="contact-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+    </aside>
   </div>
 </section>
 
-<style>
-  .section {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-
-  .section-title {
-    font-size: clamp(1.75rem, 5vw, 2.75rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-    color: var(--ink);
-    margin-bottom: 1rem;
-  }
-
-  .container {
-    padding-top: clamp(3rem, 7vw, 5rem);
-    padding-bottom: clamp(3rem, 7vw, 5rem);
-  }
-
-  .contact-inner {
+<style lang="scss">
+  .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: 1fr 300px;
+    gap: 60px;
+    margin-top: 40px;
   }
 
-  .contact-copy {
-    font-size: 0.9375rem;
-    color: var(--ink-2);
-    line-height: 1.6;
-  }
-
-  .contact-links {
+  .about-bio {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    list-style: none;
+    gap: 16px;
+
+    p {
+      font-size: .95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      strong { color: var(--text); font-weight: 600; }
+    }
   }
 
-  .contact-entry {
+  .about-badges {
     display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-    padding: 0.875rem 1rem;
-    background: var(--bg-card);
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .about-badge {
+    font-size: .75rem;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 100px;
     border: 1px solid var(--border);
-    border-radius: 8px;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.15s;
-  }
-  .contact-entry:hover {
-    border-color: var(--accent);
+    background: var(--surface);
+    color: var(--muted);
+    letter-spacing: .02em;
+    transition: border-color .2s, color .2s;
+
+    &:hover {
+      border-color: rgba(251,191,36,.35);
+      color: var(--text);
+    }
   }
 
-  .entry-label {
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
+  .about-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .about-contact-title {
+    font-size: .68rem;
+    font-family: var(--font-mono);
+    letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--muted);
+    margin-bottom: 4px;
   }
 
-  .entry-value {
-    font-size: 0.875rem;
+  .contact-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: .82rem;
     font-weight: 500;
-    color: var(--ink);
+    text-decoration: none;
+    transition: border-color .2s, background .2s;
+
+    &:hover {
+      border-color: rgba(255,255,255,.15);
+      background: #16161a;
+      .contact-arrow { transform: translate(2px,-2px); opacity: 1; }
+    }
+
+    span:nth-child(2) { flex: 1; }
   }
 
-  @media (max-width: 700px) {
-    .contact-inner {
-      grid-template-columns: 1fr;
-    }
+  .contact-icon {
+    width: 30px; height: 30px;
+    border-radius: 7px;
+    background: rgba(255,255,255,.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-arrow {
+    color: var(--muted);
+    opacity: .35;
+    transition: transform .2s, opacity .2s;
+  }
+
+  @media (max-width: 768px) {
+    .about-grid { grid-template-columns: 1fr; gap: 36px; }
   }
 </style>

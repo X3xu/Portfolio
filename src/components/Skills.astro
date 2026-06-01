@@ -1,92 +1,152 @@
 ---
-import { SKILL_GROUPS } from '../data/resume'
+import GitHub from "../icons/Github.astro";
+import JavaScript from "../icons/JavaScript.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import HTML from "../icons/HTML.astro";
+import icoAstro from "../icons/icoAstro.astro";
+import Java from "../icons/Java.astro";
+import Sass from "../icons/Sass.astro";
+import React from "../icons/React.astro";
+import Angular from "../icons/Angular.astro";
+import Docker from "../icons/Docker.astro";
+import Vue from "../icons/Vue.astro";
+import Webpack from "../icons/Webpack.astro";
+import CSS from "../icons/CSS.astro";
+
+/* skills sin icono propio → se muestran sólo con texto */
+const SKILL_GROUPS = [
+  {
+    label: "// arquitectura & buenas prácticas",
+    title: "Arquitectura",
+    skills: [
+      { name: "SPA / SSR",      icon: null },
+      { name: "Sistemas de Diseño", icon: null },
+      { name: "Core Web Vitals / WPO", icon: null },
+      { name: "WCAG Accesibilidad", icon: null },
+      { name: "SOLID · Clean Code", icon: null },
+      { name: "AI-Driven Dev (MCPs)", icon: null },
+    ],
+  },
+  {
+    label: "// frontend",
+    title: "Front-End",
+    skills: [
+      { name: "JavaScript ES6+", icon: JavaScript },
+      { name: "TypeScript",       icon: null },
+      { name: "React 19",         icon: React },
+      { name: "Next.js",          icon: null },
+      { name: "Vue",              icon: Vue },
+      { name: "Angular 11",       icon: Angular },
+      { name: "Astro",            icon: icoAstro },
+      { name: "HTML5",            icon: HTML },
+      { name: "CSS3",             icon: CSS },
+      { name: "Sass",             icon: Sass },
+      { name: "Storybook",        icon: null },
+    ],
+  },
+  {
+    label: "// backend & datos",
+    title: "Back-End",
+    skills: [
+      { name: "Java",         icon: Java },
+      { name: "Spring Boot",  icon: null },
+      { name: "Hibernate / JPA", icon: null },
+      { name: "SQL",          icon: null },
+      { name: "APIs REST",    icon: null },
+      { name: "WordPress",    icon: null },
+    ],
+  },
+  {
+    label: "// devops & herramientas",
+    title: "DevOps",
+    skills: [
+      { name: "Git",          icon: GitHub },
+      { name: "CI/CD (GitLab / GitHub / Jenkins)", icon: null },
+      { name: "Docker",       icon: Docker },
+      { name: "Webpack",      icon: Webpack },
+      { name: "SonarQube",    icon: null },
+      { name: "Vitest / JUnit", icon: null },
+      { name: "Optimizely A/B", icon: null },
+      { name: "Maven",        icon: null },
+    ],
+  },
+];
 ---
 
-<section id="skills" aria-labelledby="skills-heading" class="section">
-  <div class="container">
-    <p class="section-label" aria-hidden="true">// Stack</p>
-    <h2 id="skills-heading" class="section-title">Skills</h2>
+<section id="skills" class="sr">
+  <p class="section-label">// stack técnico</p>
+  <h2 class="section-title">Skills</h2>
 
-    <div class="skill-groups">
-      {
-        SKILL_GROUPS.map((group) => (
-          <div class="skill-group">
-            <h3 class="group-label">{group.label}</h3>
-            <ul class="skill-list" role="list">
-              {group.skills.map((skill) => (
-                <li class="skill-tag">{skill}</li>
-              ))}
-            </ul>
-          </div>
-        ))
-      }
-    </div>
+  <div class="skills-grid">
+    {SKILL_GROUPS.map(({ label, title, skills }) => (
+      <div class="skill-group card sr">
+        <p class="skill-group-code">{label}</p>
+        <h3 class="skill-group-title">{title}</h3>
+        <ul class="skill-list">
+          {skills.map(({ name, icon: Icon }) => (
+            <li>
+              <span class="tag skill-tag" data-hover>
+                {Icon && <Icon class="skill-icon" />}
+                {name}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
   </div>
 </section>
 
-<style>
-  .section {
-    border-bottom: 1px solid var(--border);
+<style lang="scss">
+  .skills-grid {
+    margin-top: 44px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-
-  .section-title {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    color: var(--ink);
-    margin-bottom: 3rem;
-  }
-
-  .container {
-    padding-top: clamp(3rem, 7vw, 5rem);
-    padding-bottom: clamp(3rem, 7vw, 5rem);
-  }
-
-  .skill-groups {
+  .skill-group {
+    padding: 24px;
     display: flex;
     flex-direction: column;
-    gap: 2.5rem;
+    gap: 14px;
   }
 
-  .group-label {
+  .skill-group-code {
     font-family: var(--font-mono);
-    font-size: 0.6875rem;
+    font-size: .65rem;
+    letter-spacing: .1em;
+    color: var(--accent);
+    opacity: .7;
+  }
+
+  .skill-group-title {
+    font-size: .95rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
+    color: var(--text);
+    margin-top: -6px;
   }
 
   .skill-list {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    list-style: none;
+    gap: 7px;
   }
 
   .skill-tag {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--ink-2);
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    padding: 0.375rem 0.875rem;
-    border-radius: 6px;
-    transition: border-color 0.15s, color 0.15s;
+    font-size: .75rem;
+    padding: 5px 11px;
+    gap: 7px;
   }
-  .skill-tag:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+
+  .skill-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .skills-grid { grid-template-columns: 1fr; }
   }
 </style>
