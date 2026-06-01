@@ -69,7 +69,7 @@ export interface SkillGroup {
 export const SKILL_GROUPS: SkillGroup[] = [
   {
     label: 'Frontend',
-    skills: ['React 19', 'Next.js', 'TypeScript', 'Vue 3', 'JavaScript ES6+', 'HTML5', 'CSS3 / SASS', 'Tailwind CSS'],
+    skills: ['React 19', 'Next.js', 'TypeScript', 'Vue 3', 'Angular', 'JavaScript ES6+', 'HTML5', 'CSS3 / SASS', 'Tailwind CSS'],
   },
   {
     label: 'Herramientas',
@@ -77,7 +77,7 @@ export const SKILL_GROUPS: SkillGroup[] = [
   },
   {
     label: 'Backend',
-    skills: ['Angular', 'Java', 'Spring Boot', 'SQL', 'SonarQube'],
+    skills: ['Java', 'Spring Boot', 'SQL', 'SonarQube'],
   },
 ]
 
