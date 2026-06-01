@@ -1,0 +1,36 @@
+---
+import { PERSONAL } from '../data/resume'
+
+const year = new Date().getFullYear()
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-copy">
+      &copy; {year} {PERSONAL.name}
+    </p>
+    <p class="footer-tech" aria-label="Construido con Astro y desplegado en Vercel">
+      Astro · Vercel
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-copy,
+  .footer-tech {
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+</style>

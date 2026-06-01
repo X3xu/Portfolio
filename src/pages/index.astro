@@ -1,31 +1,22 @@
 ---
-import Education from '../components/Experiencie.astro';
-import Layout from '../layouts/Layout.astro';
-
-import '@fontsource-variable/onest';
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Hero from '../components/Hero.astro'
+import Experience from '../components/Experience.astro'
+import Skills from '../components/Skills.astro'
+import Projects from '../components/Projects.astro'
+import Contact from '../components/Contact.astro'
+import Footer from '../components/Footer.astro'
 ---
 
-<Layout title="JJD | Jesús Jiménez Dillana" description='Programador Software'>
+<Layout>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <Experience />
+    <Skills />
+    <Projects />
+    <Contact />
+  </main>
+  <Footer />
 </Layout>
-
-<style lang="scss">
-
-	body {
-		font-family: 'Onest Variable', sans-serif;
-	}
-
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 4rem;
-		text-align: center;
-		padding: 0;
-	}
-
-	h2 {
-		font-size: 3rem;
-		line-height: 3rem;
-		text-align: center;
-		padding: 0;
-	}
-</style>

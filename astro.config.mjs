@@ -1,12 +1,7 @@
-import { defineConfig } from 'astro/config';
-
-import tailwind from "@astrojs/tailwind";
-import react from '@astrojs/react';
-import vercel from '@astrojs/vercel/serverless';
+import { defineConfig } from 'astro/config'
+import tailwind from '@astrojs/tailwind'
 
 export default defineConfig({
-  devToolbar: {
-    enabled: false
-  },
-  integrations: [tailwind(), react()]
-});
+  site: 'https://jesusjimenezdillana.vercel.app',
+  integrations: [tailwind()],
+})

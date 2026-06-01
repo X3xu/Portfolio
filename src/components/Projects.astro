@@ -1,173 +1,219 @@
 ---
-import GitHub from "../icons/Github.astro";
-import React from "../icons/React.astro";
-import Tailwind from "../icons/Tailwind.astro";
-import Link from "./Link.astro";
-import LinkButton from "./LinkButton.astro";
-import Sass from "../icons/Sass.astro";
-import icoAstro from "../icons/icoAstro.astro";
-import icoScript from "../icons/JavaScript.astro";
-import HTML from "../icons/HTML.astro";
-import CSS from "../icons/CSS.astro";
-
-const TAGS = {
-  REACT: {
-    name: "React.js",
-    class: "bg-black text-white",
-    icon: React,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
-
-  SASS: {
-    name: "Sass",
-    class: "bg-[#003159] text-white",
-    icon: Sass,
-  },
-
-  Astro: {
-    name: "Astro",
-    class: "bg-black  text-white",
-    icon: icoAstro,
-  },
-  
-  JavaScript: {
-    name: "JavaScript",
-    class: "bg-black  text-white",
-    icon: icoScript,
-  },
-  HTML: {
-    name: "HTML",
-    class: "bg-black text-white",
-    icon: HTML,
-  },
-  CSS: {
-    name: "CSS",
-    class: "bg-black text-white",
-    icon: CSS,
-  },
-};
-const PROJECTS = [
-    {
-    title: "UI Template",
-    description:
-      "Plantilla web responsive desarrollada como prueba técnica utilizando HTML, CSS y JavaScript vanilla. Implementa un diseño moderno y funcional con interacciones dinámicas.",
-    link: "https://waveless-blond.vercel.app/",
-    github: "https://github.com/X3xu/waveless.git",
-    image: "waveless.webp",
-    tags: [TAGS.JavaScript, TAGS.HTML, TAGS.CSS],
-  },
-  {
-    title: "QuizzGame - ¡Diviértete con entretenidas preguntas!",
-    description:
-      "Juego que consiste en preguntas aleatorías que cuestionarán tu nivel de cultura, ¿serás capaz de acertar todas?",
-    link: "https://quizzzgame.vercel.app/",
-    github: "https://github.com/X3xu/quizzGame",
-    image: "QuizzGame.webp",
-    tags: [TAGS.REACT, TAGS.SASS],
-  },
-    {
-    title: "Star Wars",
-    description:
-      "Una web SPA para explorar la API de Star Wars",
-    link: "https://star-wars-seven-iota.vercel.app/",
-    github: "https://github.com/X3xu/star-wars",
-    image: "SWAPI.webp",
-    tags: [TAGS.JavaScript],
-  },
-  {
-    title: "Portfolio JJD | Jesús Jiménez Dillana",
-    description:
-      "Descubre como está desarrollado este mismo portfolio con las diferentes tecnologías.",
-    link: "https://jesusjimenezdillana.vercel.app/",
-    github: "https://github.com/X3xu/Portfolio",
-    image: "Portfolio.webp",
-    tags: [TAGS.Astro, TAGS.TAILWIND],
-  },
-];
+import { PROJECTS } from '../data/resume'
 ---
 
-<section id="projects">
-  <div class="flex items-center justify-center mb-14">
-    <svg xmlns="http://www.w3.org/2000/svg"  width="30px"  height="30px"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-code white"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 8l-4 4l4 4" /><path d="M17 8l4 4l-4 4" /><path d="M14 4l-4 16" /></svg>
-    <h3>Proyectos</h3>
-  </div>
+<section id="projects" aria-labelledby="projects-heading" class="section">
+  <div class="container">
+    <p class="section-label" aria-hidden="true">// Work</p>
+    <h2 id="projects-heading" class="section-title">Proyectos</h2>
 
-  <div class="flex flex-col gap-y-16">
-    {
-      PROJECTS.map(({ image, title, description, tags, link, github }) => (
-        <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-          <div class="w-full md:w-1/2">
-            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-              <img
-                alt="Proyectos"
-                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105 max-h-[250px] overflow-auto"
-                src={image}
-              />
-            </div>
-          </div>
-
-          <div class="w-full md:w-1/2 md:max-w-lg">
-            <h3 class="text-2xl font-bold">
-              {title}
-            </h3>
-            <div class="flex flex-wrap mt-2 justify-center">
-              <ul class="flex flex-row mb-2 gap-x-2">
-                {tags.map((tag) => (
-                  <li>
-                    <span
-                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-                    >
-                      <tag.icon class="size-4" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              <div class="mt-2">
-                {description}
+    <ul class="project-list" role="list">
+      {
+        PROJECTS.map((project, i) => (
+          <li class="project-item">
+            <article aria-labelledby={`project-title-${i}`}>
+              <div class="project-main">
+                <div class="project-text">
+                  <span class="project-num" aria-hidden="true">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <h3 id={`project-title-${i}`} class="project-name">
+                    {project.title}
+                  </h3>
+                  <p class="project-desc">{project.description}</p>
+                  <ul class="project-tags" role="list" aria-label="Tecnologías usadas">
+                    {project.tags.map((tag) => (
+                      <li class="project-tag">{tag}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="project-image-wrap">
+                  <img
+                    src={project.image}
+                    alt={`Captura de pantalla de ${project.title}`}
+                    class="project-image"
+                    loading="lazy"
+                    decoding="async"
+                    width="400"
+                    height="225"
+                  />
+                </div>
               </div>
-              <footer class="flex items-end justify-start mt-4 gap-x-4">
-                {github && (
-                  <LinkButton href={github}>
-                    <GitHub class="size-6" />
-                    Code
-                  </LinkButton>
-                )}
-                {link && (
-                  <LinkButton href={link}>
-                    <Link class="size-4" />
-                    Preview
-                  </LinkButton>
-                )}
-              </footer>
-            </div>
-          </div>
-        </article>
-      ))
-    }
+              <div class="project-links">
+                <a
+                  href={project.demo}
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Ver demo de ${project.title} (abre en nueva pestaña)`}
+                >
+                  Demo&nbsp;↗
+                </a>
+                <a
+                  href={project.repo}
+                  class="project-link project-link--ghost"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Ver código de ${project.title} en GitHub (abre en nueva pestaña)`}
+                >
+                  GitHub&nbsp;↗
+                </a>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </section>
 
 <style>
-  h3 {
-    font-size: 2rem;
+  .section {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin-bottom: 3rem;
+  }
+
+  .container {
+    padding-top: clamp(3rem, 7vw, 5rem);
+    padding-bottom: clamp(3rem, 7vw, 5rem);
+  }
+
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  .project-item {
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 0;
+  }
+  .project-item:first-child {
+    padding-top: 0;
+  }
+  .project-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .project-main {
+    display: grid;
+    grid-template-columns: 1fr 22rem;
+    gap: 2.5rem;
+    align-items: start;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-num {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-name {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .project-desc {
+    font-size: 0.875rem;
+    color: var(--ink-2);
+    line-height: 1.65;
+    margin-bottom: 0.875rem;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+  }
+
+  .project-tag {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--ink-2);
+    background: var(--bg-subtle);
+    border: 1px solid var(--border);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .project-image-wrap {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    aspect-ratio: 16 / 9;
+    background: var(--bg-subtle);
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+  .project-item:hover .project-image {
+    transform: scale(1.03);
+  }
+
+  .project-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .project-link {
+    font-size: 0.8125rem;
     font-weight: 600;
-    text-align: center;
+    color: var(--ink);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: var(--bg-card);
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .project-link:hover {
+    border-color: var(--ink);
   }
 
-  svg {
-    margin-right: 20px;
+  .project-link--ghost {
+    color: var(--muted);
+  }
+  .project-link--ghost:hover {
+    color: var(--ink);
+    border-color: var(--ink);
   }
 
-  section {
-    padding: 30px;
+  @media (max-width: 768px) {
+    .project-main {
+      grid-template-columns: 1fr;
+    }
+    .project-image-wrap {
+      order: -1;
+    }
   }
-
-
-
 </style>

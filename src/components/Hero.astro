@@ -1,0 +1,189 @@
+---
+import { PERSONAL } from '../data/resume'
+---
+
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="container hero-inner">
+    <p class="hero-eyebrow" aria-hidden="true">
+      {PERSONAL.name} — {PERSONAL.location}
+    </p>
+
+    <h1 id="hero-heading" class="hero-title">
+      Front&#8209;End<br />
+      <span class="title-accent">Developer</span>
+    </h1>
+
+    <p class="hero-description">{PERSONAL.tagline}</p>
+
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+      <a
+        href={PERSONAL.cv}
+        class="btn btn-secondary"
+        download
+        aria-label="Descargar currículum en PDF"
+      >
+        Descargar CV
+      </a>
+      <a
+        href={PERSONAL.linkedin}
+        class="btn btn-secondary"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="LinkedIn de Jesús Jiménez Dillana (abre en nueva pestaña)"
+      >
+        LinkedIn&nbsp;↗
+      </a>
+    </div>
+
+    <dl class="hero-stats" aria-label="Datos clave">
+      <div class="stat">
+        <dt class="stat-label">Experiencia</dt>
+        <dd class="stat-value">+5 años</dd>
+      </div>
+      <div class="stat">
+        <dt class="stat-label">Empresas</dt>
+        <dd class="stat-value">4</dd>
+      </div>
+      <div class="stat">
+        <dt class="stat-label">Tecnologías</dt>
+        <dd class="stat-value">+10</dd>
+      </div>
+      <div class="stat">
+        <dt class="stat-label">Stack principal</dt>
+        <dd class="stat-value">React 19</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<style>
+  .hero {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-inner {
+    padding-top: clamp(4rem, 10vw, 7rem);
+    padding-bottom: clamp(3rem, 7vw, 5rem);
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.0;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    margin-bottom: 1.75rem;
+  }
+
+  .title-accent {
+    color: var(--accent);
+  }
+
+  .hero-description {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    color: var(--ink-2);
+    line-height: 1.65;
+    max-width: 38rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 4rem;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.625rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--bg);
+    border: 1px solid var(--ink);
+  }
+  .btn-primary:hover {
+    background: #333;
+    border-color: #333;
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink-2);
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: start;
+    gap: 0;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stat {
+    padding-right: 3rem;
+  }
+  .stat:not(:last-child) {
+    border-right: 1px solid var(--border);
+    margin-right: 3rem;
+  }
+
+  .stat-value {
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--ink);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  @media (max-width: 640px) {
+    .hero-stats {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    .stat {
+      padding-right: 0;
+    }
+    .stat:not(:last-child) {
+      border-right: none;
+      margin-right: 0;
+    }
+  }
+</style>
