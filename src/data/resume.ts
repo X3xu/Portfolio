@@ -102,8 +102,8 @@ export const PROJECTS: Project[] = [
   {
     title: 'QuizzGame',
     description:
-      'Juego de preguntas aleatorias de cultura general construido con React y Sass. ¿Puedes acertar todas?',
-    tags: ['React', 'Sass'],
+      'Juego de trivia interactivo con sistema de puntuación, feedback visual por respuesta y pantalla de resultados. Arquitectura de componentes con React Hooks.',
+    tags: ['React 18', 'Vite', 'JavaScript', 'CSS'],
     demo: 'https://quizzzgame.vercel.app/',
     repo: 'https://github.com/X3xu/quizzGame',
     image: '/QuizzGame.webp',
@@ -120,8 +120,8 @@ export const PROJECTS: Project[] = [
   {
     title: 'Portfolio JJD',
     description:
-      'Este mismo portfolio — construido con Astro y Tailwind CSS, desplegado en Vercel.',
-    tags: ['Astro', 'Tailwind CSS'],
+      'Este mismo portfolio — construido con Astro y SCSS, animaciones canvas, cursor personalizado, scroll reveal y sistema de temas claro/oscuro. Desplegado en Vercel.',
+    tags: ['Astro', 'TypeScript', 'SCSS'],
     demo: 'https://jesusjimenezdillana.vercel.app/',
     repo: 'https://github.com/X3xu/Portfolio',
     image: '/Portfolio.webp',
