@@ -102,8 +102,8 @@ export const PROJECTS: Project[] = [
   {
     title: 'QuizzGame',
     description:
-      'Juego de trivia interactivo con sistema de puntuación, feedback visual por respuesta y pantalla de resultados. Arquitectura de componentes con React Hooks.',
-    tags: ['React 18', 'Vite', 'JavaScript', 'CSS'],
+      'Trivia fullstack con generación de preguntas por IA (Google Gemini), ranking global persistido en Supabase, avatares, rachas y envío de preguntas por usuarios. Fallback a datos locales si el backend no está disponible.',
+    tags: ['Next.js', 'React 19', 'TypeScript', 'Supabase', 'Tailwind CSS', 'Framer Motion', 'Google Gemini'],
     demo: 'https://quizzzgame.vercel.app/',
     repo: 'https://github.com/X3xu/quizzGame',
     image: '/QuizzGame.webp',
@@ -120,8 +120,8 @@ export const PROJECTS: Project[] = [
   {
     title: 'Portfolio JJD',
     description:
-      'Este mismo portfolio — construido con Astro y SCSS, animaciones canvas, cursor personalizado, scroll reveal y sistema de temas claro/oscuro. Desplegado en Vercel.',
-    tags: ['Astro', 'TypeScript', 'SCSS'],
+      'Portfolio generado estáticamente con Astro. Incluye fondo canvas interactivo, cursor personalizado, scroll reveal con IntersectionObserver, tilt 3D en tarjetas y sistema de temas claro/oscuro con tokens CSS.',
+    tags: ['Astro', 'TypeScript', 'SCSS', 'Canvas API'],
     demo: 'https://jesusjimenezdillana.vercel.app/',
     repo: 'https://github.com/X3xu/Portfolio',
     image: '/Portfolio.webp',
