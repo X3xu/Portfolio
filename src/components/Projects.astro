@@ -2,20 +2,27 @@
 import GitHub from "../icons/Github.astro";
 import React from "../icons/React.astro";
 import Tailwind from "../icons/Tailwind.astro";
-import Sass from "../icons/Sass.astro";
 import icoAstro from "../icons/icoAstro.astro";
 import icoScript from "../icons/JavaScript.astro";
 import HTML from "../icons/HTML.astro";
 import CSS from "../icons/CSS.astro";
+import NextJS from "../icons/NextJS.astro";
+import TypeScript from "../icons/TypeScript.astro";
+import Supabase from "../icons/Supabase.astro";
+import FramerMotion from "../icons/FramerMotion.astro";
 
 const TAGS = {
-  REACT:      { name: "React.js",     icon: React },
-  TAILWIND:   { name: "Tailwind CSS", icon: Tailwind },
-  SASS:       { name: "Sass",         icon: Sass },
-  ASTRO:      { name: "Astro",        icon: icoAstro },
-  JS:         { name: "JavaScript",   icon: icoScript },
-  HTML:       { name: "HTML",         icon: HTML },
-  CSS:        { name: "CSS",          icon: CSS },
+  NEXT:         { name: "Next.js",       icon: NextJS },
+  REACT:        { name: "React 19",      icon: React },
+  REACT18:      { name: "React 18",      icon: React },
+  TAILWIND:     { name: "Tailwind CSS",  icon: Tailwind },
+  ASTRO:        { name: "Astro",         icon: icoAstro },
+  TS:           { name: "TypeScript",    icon: TypeScript },
+  JS:           { name: "JavaScript",    icon: icoScript },
+  HTML:         { name: "HTML",          icon: HTML },
+  CSS:          { name: "CSS",           icon: CSS },
+  SUPABASE:     { name: "Supabase",      icon: Supabase },
+  FRAMER:       { name: "Framer Motion", icon: FramerMotion },
 };
 
 const PROJECTS = [
@@ -23,7 +30,7 @@ const PROJECTS = [
     num: "01",
     title: "UI Template",
     description:
-      "Plantilla web responsive desarrollada como prueba técnica. Implementa un diseño moderno con interacciones dinámicas usando HTML, CSS y JS vanilla.",
+      "Plantilla web responsive desarrollada como prueba técnica. Diseño moderno con interacciones dinámicas en HTML, CSS y JS vanilla.",
     link: "https://waveless-blond.vercel.app/",
     github: "https://github.com/X3xu/waveless.git",
     image: "waveless.webp",
@@ -33,17 +40,17 @@ const PROJECTS = [
     num: "02",
     title: "QuizzGame",
     description:
-      "Juego de preguntas aleatorias que cuestionan tu nivel de cultura general. Desarrollado con React y Sass, con gestión de estado y animaciones de transición.",
+      "Trivia fullstack con generación de preguntas por IA (Google Gemini), ranking global persistido en Supabase, avatares, rachas y envío de preguntas por usuarios.",
     link: "https://quizzzgame.vercel.app/",
     github: "https://github.com/X3xu/quizzGame",
     image: "QuizzGame.webp",
-    tags: [TAGS.REACT, TAGS.SASS],
+    tags: [TAGS.NEXT, TAGS.REACT, TAGS.TS, TAGS.SUPABASE, TAGS.TAILWIND, TAGS.FRAMER],
   },
   {
     num: "03",
     title: "Star Wars Explorer",
     description:
-      "SPA para explorar la API pública de Star Wars. Listados, detalle de personajes, naves y planetas con navegación fluida.",
+      "SPA que consume la API pública de Star Wars para explorar personajes, naves y planetas con navegación fluida.",
     link: "https://star-wars-seven-iota.vercel.app/",
     github: "https://github.com/X3xu/star-wars",
     image: "SWAPI.webp",
@@ -53,11 +60,11 @@ const PROJECTS = [
     num: "04",
     title: "Portfolio — JJD",
     description:
-      "Este mismo portfolio. Construido con Astro y Tailwind CSS, optimizado para Core Web Vitals y desplegado en Vercel.",
+      "Este mismo portfolio. Generado estáticamente con Astro, fondo canvas interactivo, cursor personalizado, scroll reveal, tilt 3D y sistema de temas claro/oscuro.",
     link: "https://jesusjimenezdillana.vercel.app/",
     github: "https://github.com/X3xu/Portfolio",
     image: "Portfolio.webp",
-    tags: [TAGS.ASTRO, TAGS.TAILWIND],
+    tags: [TAGS.ASTRO, TAGS.TS],
   },
 ];
 ---
