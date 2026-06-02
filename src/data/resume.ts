@@ -6,7 +6,6 @@ export const PERSONAL = {
   location: 'Madrid, Spain',
   available: true,
   email: 'jesusjimenezfp@gmail.com',
-
   linkedin: 'https://linkedin.com/in/jesus-jimenez-dillana',
   github: 'https://github.com/X3xu',
   cv: '/cv.pdf',

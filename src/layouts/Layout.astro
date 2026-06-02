@@ -5,7 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Card from "../components/Card.astro";
 import Skills from "../components/Skills.astro";
-import Experiencie from "../components/Experiencie.astro";
+import Experience from "../components/Experience.astro";
 import Contact from "../components/Contact.astro";
 import CoverLetter from "../components/CoverLetter.astro";
 
@@ -14,7 +14,7 @@ interface Props {
   description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,6 +24,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
     <title>{title}</title>
     <!-- Apply saved theme before paint to avoid flash -->
     <script is:inline>
@@ -55,7 +56,7 @@ const { title } = Astro.props;
     <main id="main-content" style="opacity:0">
       <Header />
       <Contact />
-      <Experiencie />
+      <Experience />
       <Skills />
       <Projects />
       <Education />
@@ -236,6 +237,12 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.sr, .sr-stagger').forEach(el => io.observe(el));
+
+document.querySelectorAll<HTMLElement>('.sr-stagger').forEach(parent => {
+  [...parent.children].forEach((child, i) => {
+    (child as HTMLElement).style.setProperty('--i', String(Math.min(i, 6)));
+  });
+});
 
 /* ════════════════════════════════════════
    3D TILT
@@ -531,19 +538,17 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     transform: none;
   }
 
-  /* stagger children */
+  /* stagger children — delay driven by --i set in JS */
   .sr-stagger > * {
     opacity: 0;
     transform: translateY(20px);
     transition: opacity .6s var(--ease-out), transform .6s var(--ease-out);
+    transition-delay: calc(var(--i, 0) * 0.08s);
   }
-  .sr-stagger.in > *:nth-child(1)  { opacity:1; transform:none; transition-delay: 0s; }
-  .sr-stagger.in > *:nth-child(2)  { opacity:1; transform:none; transition-delay:.08s; }
-  .sr-stagger.in > *:nth-child(3)  { opacity:1; transform:none; transition-delay:.16s; }
-  .sr-stagger.in > *:nth-child(4)  { opacity:1; transform:none; transition-delay:.24s; }
-  .sr-stagger.in > *:nth-child(5)  { opacity:1; transform:none; transition-delay:.32s; }
-  .sr-stagger.in > *:nth-child(6)  { opacity:1; transform:none; transition-delay:.40s; }
-  .sr-stagger.in > *:nth-child(n+7){ opacity:1; transform:none; transition-delay:.48s; }
+  .sr-stagger.in > * {
+    opacity: 1;
+    transform: none;
+  }
 
   /* ─────────────────────────────────────────
      3D TILT

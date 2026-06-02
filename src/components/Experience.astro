@@ -1,113 +1,69 @@
 ---
-import { EXPERIENCE } from '../data/resume'
+import ExperienceItem from "./ExperienceItem.astro";
+
+const EXPERIENCE = [
+  {
+    date: "Jun 2025 — May 2026",
+    title: "Front-End Specialist Developer",
+    company: "Civitatis",
+    location: "Madrid, España",
+    description: "Lideré la migración crítica de plataformas core desde arquitecturas legacy hacia SPA modernas con React 19 y Next.js. Diseñé e implementé el Sistema de Diseño corporativo integrando Storybook. Optimicé los flujos de ingeniería incorporando IA y protocolos MCP, incrementando significativamente la productividad del equipo.",
+    stack: ["React 19", "Next.js", "TypeScript", "Storybook", "Optimizely", "Vitest", "AI/MCPs"],
+  },
+  {
+    date: "Sep 2022 — Jun 2025",
+    title: "Front-End Developer",
+    company: "Thinkabit",
+    location: "Madrid, España",
+    description: "Dirigí la evolución técnica del portal corporativo con arquitectura de componentes modulares en Vue. Mejoré drásticamente los Core Web Vitals y el diseño accesible. Implementé pipelines CI/CD completos con GitLab, Jenkins y Docker. Colaboré en Scrum integrando APIs REST y arquitecturas CMS en WordPress.",
+    stack: ["Vue", "JavaScript ES6+", "HTML5/SASS", "Webpack", "Docker", "Jenkins", "SonarQube"],
+  },
+  {
+    date: "Dic 2021 — Sep 2022",
+    title: "FullStack Developer",
+    company: "Minsait (Indra)",
+    location: "Madrid, España",
+    description: "Migración tecnológica estructural de módulos XML a tecnologías dinámicas JSP en entornos de banca privada. Gestión de interlocución técnica directa con el cliente, traduciendo requerimientos de negocio en soluciones funcionales sobre entornos Linux.",
+    stack: ["Java", "JSP", "XML", "Linux"],
+  },
+  {
+    date: "Mar 2021 — Dic 2021",
+    title: "FullStack Developer",
+    company: "NTT Data",
+    location: "Madrid, España",
+    description: "Desarrollo de aplicaciones corporativas con Spring Boot en backend y Angular 11 en frontend. Implementación de suites de pruebas unitarias con JUnit y diseño de consultas SQL complejas para extracción y manipulación eficiente de datos.",
+    stack: ["Spring Boot", "Angular 11", "Java", "SQL", "JUnit"],
+  },
+];
 ---
 
-<section id="experience" aria-labelledby="experience-heading" class="section">
-  <div class="container">
-    <p class="section-label" aria-hidden="true">// Trayectoria</p>
-    <h2 id="experience-heading" class="section-title">Experiencia</h2>
+<section id="experience" class="sr">
+  <p class="section-label">// trayectoria</p>
+  <h2 class="section-title">Experiencia profesional</h2>
 
-    <ol class="exp-list" role="list">
-      {
-        EXPERIENCE.map((job) => (
-          <li class="exp-item">
-            <div class="exp-period">
-              <time datetime={job.dateStart}>{job.period.split('–')[0].trim()}</time>
-              {' – '}
-              <time datetime={job.dateEnd}>{job.period.split('–')[1].trim()}</time>
-            </div>
-            <article class="exp-content" aria-label={`${job.role} en ${job.company}`}>
-              <h3 class="exp-role">{job.role}</h3>
-              <p class="exp-company">{job.company}</p>
-              <p class="exp-desc">{job.description}</p>
-            </article>
-          </li>
-        ))
-      }
-    </ol>
-  </div>
+  <ol class="timeline">
+    {EXPERIENCE.map((item, i) => (
+      <ExperienceItem {...item} index={i + 1} />
+    ))}
+  </ol>
 </section>
 
-<style>
-  .section {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .section-label {
-    font-family: var(--font-mono);
-    font-size: 0.6875rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.5rem;
-  }
-  .section-label::before {
-    content: '';
-  }
-
-  .section-title {
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 800;
-    letter-spacing: -0.04em;
-    color: var(--ink);
-    margin-bottom: 3rem;
-  }
-
-  .container {
-    padding-top: clamp(3rem, 7vw, 5rem);
-    padding-bottom: clamp(3rem, 7vw, 5rem);
-  }
-
-  .exp-list {
+<style lang="scss">
+  .timeline {
+    margin-top: 44px;
     display: flex;
     flex-direction: column;
-  }
+    list-style: none;
+    position: relative;
 
-  .exp-item {
-    display: grid;
-    grid-template-columns: 13rem 1fr;
-    gap: 2rem;
-    padding: 1.75rem 0;
-    border-bottom: 1px solid var(--border);
-  }
-  .exp-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
-
-  .exp-period {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--muted);
-    padding-top: 0.25rem;
-    line-height: 1.4;
-  }
-
-  .exp-role {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 0.2rem;
-  }
-
-  .exp-company {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin-bottom: 0.75rem;
-  }
-
-  .exp-desc {
-    font-size: 0.875rem;
-    color: var(--ink-2);
-    line-height: 1.65;
-  }
-
-  @media (max-width: 600px) {
-    .exp-item {
-      grid-template-columns: 1fr;
-      gap: 0.5rem;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), rgba(79,70,229,.1), transparent);
     }
   }
 </style>
