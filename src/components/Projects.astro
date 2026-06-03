@@ -10,6 +10,7 @@ import NextJS from "../icons/NextJS.astro";
 import TypeScript from "../icons/TypeScript.astro";
 import Supabase from "../icons/Supabase.astro";
 import FramerMotion from "../icons/FramerMotion.astro";
+import Vite from "../icons/Vite.astro";
 
 const TAGS = {
   NEXT:         { name: "Next.js",       icon: NextJS },
@@ -23,6 +24,7 @@ const TAGS = {
   CSS:          { name: "CSS",           icon: CSS },
   SUPABASE:     { name: "Supabase",      icon: Supabase },
   FRAMER:       { name: "Framer Motion", icon: FramerMotion },
+  VITE:         { name: "Vite",          icon: Vite },
 };
 
 const PROJECTS = [
@@ -40,11 +42,11 @@ const PROJECTS = [
     num: "02",
     title: "QuizzGame",
     description:
-      "Trivia fullstack con generación de preguntas por IA (Google Gemini), ranking global persistido en Supabase, avatares, rachas y envío de preguntas por usuarios.",
+      "Juego de trivia construido con React y Vite. Selección de categorías, temporizador por pregunta, puntuación y pantalla de resultados.",
     link: "https://quizzzgame.vercel.app/",
     github: "https://github.com/X3xu/quizzGame",
     image: "QuizzGame.webp",
-    tags: [TAGS.NEXT, TAGS.REACT, TAGS.TS, TAGS.SUPABASE, TAGS.TAILWIND, TAGS.FRAMER],
+    tags: [TAGS.REACT18, TAGS.JS, TAGS.VITE],
   },
   {
     num: "03",
@@ -64,7 +66,7 @@ const PROJECTS = [
     link: "https://jesusjimenezdillana.vercel.app/",
     github: "https://github.com/X3xu/Portfolio",
     image: "Portfolio.webp",
-    tags: [TAGS.ASTRO, TAGS.TS],
+    tags: [TAGS.ASTRO, TAGS.TS, TAGS.TAILWIND],
   },
 ];
 ---
